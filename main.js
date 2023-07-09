@@ -48,16 +48,10 @@ function helper(srcFolder, destFolder){
         let childSrcAdd = path.join(srcFolder,childNames[i])
 
         // send files
-            if(fs.lstatSync(childSrcAdd).isFile()){
-            // let childFileName = fs.baseline(childNames[i])
+        if(fs.lstatSync(childSrcAdd).isFile()){
             let cName = getCategory(childNames[i])
-
-            // let childDestAdd = path.join(destFolder,cName)
             sendFiles(childSrcAdd,destFolder,cName)
         }
-        // else{
-        //     helper(childNames[i], destFolder)
-        // }
     }
 }
 
